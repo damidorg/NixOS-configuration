@@ -1,0 +1,18 @@
+[language-server]
+rust-analyzer.command = "rust-analyzer"
+nil.command = "nixd"
+
+# Rust Configuration
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = [ "rust-analyzer" ]
+formatter = { command = "rustfmt" }
+
+# Nix Configuration
+[[language]]
+name = "nix"
+auto-format = true
+language-servers = [ "nixd" ]
+formatter = { command = "nixpkgs-fmt" }
+grammar = "nix"

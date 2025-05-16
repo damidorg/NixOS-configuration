@@ -1,0 +1,21 @@
+theme = "ao"
+
+[editor]
+cursor-shape = { normal = "block", insert = "bar" }
+lsp.display-messages = true
+auto-format = true
+mouse = true
+true-color = true
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = "↩️ "
+
+[editor.statusline]
+left = ["mode", "file-name", "separator", "position"]
+center = ["spinner", "diagnostics"]
+separator = "│"
