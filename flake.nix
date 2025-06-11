@@ -9,6 +9,10 @@
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
@@ -16,6 +20,7 @@
     {
       nixpkgs,
       grub2-themes,
+      home-manager,
       ...
     }@inputs:
     let
@@ -25,11 +30,17 @@
     in
     {
 
-      nixosConfigurations.damidorg-nix = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.damidorg = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
           grub2-themes.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.your-username = import ./desktop_enviroment/home.nix;
+          }
 
         ];
 

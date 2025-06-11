@@ -19,7 +19,6 @@
     cloudflare-warp
     localsend
   ];
-  networking.firewall.enable = true;
   networking.nftables.enable = true;
   #    --tailscale--    #
   services.tailscale.enable = true;

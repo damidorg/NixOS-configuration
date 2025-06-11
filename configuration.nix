@@ -101,6 +101,19 @@
     pkgs.helix
   ];
   nixpkgs.config.allowUnfree = true;
+  networking.firewall.enable = false;
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L"
+    ];
+    dates = "09:00";
+    randomizedDelaySec = "45min";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -116,8 +129,33 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 53317 ];
-  networking.firewall.allowedUDPPorts = [ 53317 ];
+  /*
+    networking.firewall.allowedTCPPorts = [
+      53317
+
+    ];
+    networking.firewall.allowedUDPPorts = [
+      53317
+
+      4380
+      3478
+      4379
+
+    ];
+    networking.firewall.allowedUDPPortRanges = [
+
+      {
+        from = 27000;
+        to = 27100;
+      }
+    ];
+    networking.firewall.allowedTCPPortRanges = [
+      {
+        from = 27000;
+        to = 27100;
+      }
+    ];
+  */
   # Or disable the firewall altogether.
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

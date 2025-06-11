@@ -13,14 +13,14 @@
 
 (defalias
   escctrl (tap-hold 100 100 esc lctl)
-  a (multi f24 (tap-hold $tap-time $hold-time a lmet))
+  a (multi f24 (tap-hold $tap-time $hold-time a lctl))
   s (multi f24 (tap-hold $tap-time $hold-time s lalt))
   d (multi f24 (tap-hold $tap-time $hold-time d lsft))
-  f (multi f24 (tap-hold $tap-time $hold-time f lctl))
+  f (multi f24 (tap-hold $tap-time $hold-time f lmet))
   j (multi f24 (tap-hold $tap-time $hold-time j rctl))
   k (multi f24 (tap-hold $tap-time $hold-time k rsft))
-  l (multi f24 (tap-hold $tap-time $hold-time l ralt))
-  ; (multi f24 (tap-hold $tap-time $hold-time ; rmet))
+  l (multi f24 (tap-hold $tap-time $hold-time l rmet))
+  ; (multi f24 (tap-hold $tap-time $hold-time ; rctl))
   caps (multi f24 (tap-hold $tap-time $hold-time esc caps))
 )
 

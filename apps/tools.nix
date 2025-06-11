@@ -15,20 +15,40 @@
     kismet
     aircrack-ng
     audacity
-    reaper
     spicetify-cli
-    testdisk
     jujutsu
     kanata-with-cmd
     unzip
+    virtualboxKvm
+    kvmtool
+    #    --shell--    #
+    fishPlugins.done
+    fishPlugins.fzf-fish
+    fishPlugins.forgit
+    fishPlugins.hydro
+    fzf
+    fishPlugins.grc
+    grc
+    oh-my-fish
+    gnome-shell
+    tlrc
+    uutils-coreutils-noprefix
+    which
+    ripgrep
+    bat
+    eza
+    zoxide
+    zellij
+    starship
+    carapace
+
     #    --System--    #
-    coreutils-full
-    desktop-file-utils
     nh
     rar
     rar2fs
-    #flameshot
-    #(flameshot.override { enableWlrSupport = true; })
+    du-dust
+    #j    flameshot
+    #  (flameshot.override { enableWlrSupport = true; })
     #    --programing--    #
     rust-analyzer
     nixd
@@ -39,8 +59,21 @@
     rustup
     tree-sitter-grammars.tree-sitter-rust
     tree-sitter
-
+    rustlings
+    rusty-man
+    #    --embeded--    #
+    probe-rs-tools
+    openocd
+    qemu_full
+    gdb
+    cargo-generate
   ];
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged
+    # programs here, NOT in environment.systemPackages
+  ];
+
   #    --kanata--    #
   boot.kernelModules = [ "uinput" ];
 

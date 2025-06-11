@@ -16,8 +16,9 @@
     gnomeExtensions.invert-window-color
     gnomeExtensions.highlight-focus
     gnomeExtensions.tiling-assistant
-    gnome-gnome-tweaks
+    gnome-tweaks
     gnome-common
+    gnome-remote-desktop
   ];
   environment.gnome.excludePackages = with pkgs; [
     orca
@@ -61,20 +62,12 @@
     gnome-weather
     # loupe
     # nautilus
-    gnome-connections
+    # gnome-connections
     simple-scan
     #snapshot
     #totem
     yelp
     #gnome-software
   ];
-
-  services.xserver.desktopManager.gnome = {
-    extraGSettingsOverridePackages = [ pkgs.mutter ];
-    extraGSettingsOverrides = ''
-      [org.gnome.mutter]
-      experimental-features=['scale-monitor-framebuffer', 'variable-refresh-rate', 'kms-modifiers']
-    '';
-  };
 
 }

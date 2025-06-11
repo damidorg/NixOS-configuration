@@ -5,8 +5,8 @@
   ...
 }:
 {
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
@@ -19,16 +19,6 @@
     proggyfonts
   ];
   environment.systemPackages = with pkgs; [
-    #    --shell--    #
-    fishPlugins.done
-    fishPlugins.fzf-fish
-    fishPlugins.forgit
-    fishPlugins.hydro
-    fzf
-    fishPlugins.grc
-    grc
-    oh-my-fish
-    gnome-shell
     #    --system--    #
     rose-pine-cursor
     home-manager
