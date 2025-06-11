@@ -30,7 +30,7 @@
     in
     {
 
-      nixosConfigurations.damidorg = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
@@ -39,7 +39,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.your-username = import ./desktop_enviroment/home.nix;
+            #            home-manager.users.your-username = import ./desktop_enviroment/home.nix;
           }
 
         ];

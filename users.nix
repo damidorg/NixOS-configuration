@@ -5,7 +5,7 @@
   ...
 }:
 {
-  #    --user-d20--    #
+  #    --user-damidorg--    #
   users.defaultUserShell = pkgs.fish;
 
   nix.settings.experimental-features = [

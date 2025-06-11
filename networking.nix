@@ -6,7 +6,7 @@
 }:
 {
   #    --netnetworking--    #
-  networking.hostName = "damidorg-nix";
+  networking.hostName = "nixos";
   services.gnome.gnome-keyring.enable = true; # Optional: For credential storage
   networking.networkmanager.enable = true;
 
