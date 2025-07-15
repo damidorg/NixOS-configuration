@@ -6,8 +6,7 @@
   home.username = "damidorg";
   home.homeDirectory = "/home/damidorg";
   home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
+    enable = true;
     name = "cursor";
     size = 32;
     package = pkgs.rose-pine-cursor;
@@ -19,9 +18,6 @@
 
   };
   dconf.settings = {
-    "org/gnome/desktop/background" = {
-      picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-    };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
@@ -34,13 +30,6 @@
       package = pkgs.gnome-themes-extra;
     };
   };
-  /*
-    qt = {
-      enable = true;
-      platformTheme = "gnome";
-      style = "adwaita-dark";
-    };
-  */
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

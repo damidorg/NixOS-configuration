@@ -15,8 +15,6 @@
     kismet
     aircrack-ng
     audacity
-    spicetify-cli
-    jujutsu
     kanata-with-cmd
     unzip
     virtualboxKvm
@@ -36,7 +34,6 @@
     which
     ripgrep
     bat
-    eza
     zoxide
     zellij
     starship
@@ -89,20 +86,6 @@
     ];
   };
 
-  #    --spotify--    #
-  programs.spicetify =
-    let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-    in
-    {
-      enable = true;
-      theme = spicePkgs.themes.default;
-      enabledExtensions = with spicePkgs.extensions; [
-        adblock
-        hidePodcasts
-        shuffle # shuffle+ (special characters are sanitized out of extension names)
-      ];
-    };
   #    --wireshark--    #
   programs.wireshark = {
     enable = true;

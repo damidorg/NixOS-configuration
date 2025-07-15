@@ -7,6 +7,7 @@
 {
   environment.systemPackages = with pkgs; [
     fastfetch
+    spotify
     obsidian
     libreoffice
     telegram-desktop

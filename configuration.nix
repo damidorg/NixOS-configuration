@@ -52,7 +52,6 @@
     ./apps/games.nix
     ./apps/tools.nix
     ./apps/apps.nix
-    inputs.spicetify-nix.nixosModules.default
   ];
 
   #    --Bootloader--    #
